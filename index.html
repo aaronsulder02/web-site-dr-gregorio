@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Gregorio — Clínica Odontológica | Agenda tu Consulta</title>
+<meta name="description" content="Clínica odontológica familiar. Tecnología de vanguardia, diagnósticos rápidos y un trato cercano. Agenda por WhatsApp.">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul-confianza:#1B4B66;
+    --azul-sereno:#2E8B9E;
+    --aqua-suave:#A8DADC;
+    --coral:#F4A261;
+    --blanco:#FFFFFF;
+    --gris-perla:#F5F7F8;
+    --gris-carbon:#3B3F42;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--blanco);
+    color:var(--gris-carbon);
+    font-family:'Montserrat', sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    line-height:1.2;
+    margin:0 0 0.5em 0;
+    color:var(--azul-confianza);
+  }
+  .script{
+    font-family:'Alex Brush', cursive;
+    color:var(--azul-sereno);
+    font-weight:400;
+    line-height:1;
+  }
+  p{margin:0 0 1em 0; color:var(--gris-carbon); max-width:62ch;}
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+  section{padding:88px 0;}
+  .bg-perla{background:var(--gris-perla);}
+  .bg-aqua{background:linear-gradient(180deg, var(--blanco) 0%, rgba(168,218,220,0.35) 100%);}
+
+  .wave{display:block; width:100%; height:auto; margin-top:-1px;}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(27,75,102,0.1);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 28px; max-width:1120px; margin:0 auto;
+  }
+  .logo-mark{display:flex; align-items:center; gap:10px;}
+  .logo-mark img{height:44px; width:auto; display:block;}
+  nav{display:flex; gap:32px; align-items:center;}
+  nav a{
+    text-decoration:none; color:var(--azul-confianza); font-size:0.92rem;
+    font-weight:600;
+  }
+  .nav-links{display:flex; gap:26px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:999px;
+    text-decoration:none; font-weight:600; font-size:0.92rem;
+    border:none; cursor:pointer; transition:all .2s ease;
+  }
+  .btn-cta{background:var(--coral); color:#fff; box-shadow:0 6px 16px rgba(244,162,97,0.35);}
+  .btn-cta:hover{background:#e28f4c; transform:translateY(-1px);}
+  .btn-outline{
+    background:transparent; border:1.5px solid var(--azul-confianza); color:var(--azul-confianza);
+  }
+  .btn-outline:hover{background:var(--azul-confianza); color:#fff;}
+  .btn-icon{width:16px; height:16px; flex-shrink:0;}
+
+  /* Hero */
+  .hero{
+    padding:72px 0 60px;
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+  }
+  .hero-eyebrow{
+    color:var(--azul-sereno); font-weight:700; font-size:0.85rem;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 4.6vw, 3.3rem);
+    max-width:12ch;
+  }
+  .hero .script-slogan{font-size:2.1rem; display:block; margin:14px 0 18px;}
+  .hero p.lead{
+    font-size:1.08rem; margin-top:6px; max-width:46ch;
+  }
+  .hero-ctas{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+  .hero-visual{
+    position:relative; aspect-ratio:4/5;
+    border-radius:62% 38% 55% 45% / 45% 40% 60% 55%;
+    background:linear-gradient(150deg, var(--aqua-suave) 0%, #e9f4f4 100%);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 20px 50px rgba(27,75,102,0.12);
+  }
+  .hero-visual img{width:58%; height:auto;}
+
+  /* Trust bar */
+  .trust{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:28px;
+    padding:40px 0;
+  }
+  .trust-item{display:flex; align-items:flex-start; gap:14px;}
+  .trust-item svg{width:30px; height:30px; flex-shrink:0; color:var(--azul-sereno);}
+  .trust-item .num{font-family:'Playfair Display', serif; font-size:1.4rem; color:var(--azul-confianza); margin-bottom:2px;}
+  .trust-item span.label{font-size:0.85rem; color:var(--gris-carbon);}
+
+  /* About */
+  .about{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  .about h2{font-size:2rem; max-width:14ch;}
+  .about-values{display:flex; flex-direction:column; gap:0;}
+  .value-row{
+    display:grid; grid-template-columns:130px 1fr; gap:24px;
+    padding:20px 0; border-top:1px solid rgba(27,75,102,0.12);
+  }
+  .value-row:last-child{border-bottom:1px solid rgba(27,75,102,0.12);}
+  .value-row .value-name{font-weight:700; color:var(--azul-sereno); font-family:'Playfair Display', serif; font-size:1.02rem;}
+  .value-row p{margin:0; font-size:0.96rem;}
+
+  /* Services zig-zag */
+  .services-head{max-width:640px; margin-bottom:52px;}
+  .service-row{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+    padding:48px 0; border-top:1px solid rgba(27,75,102,0.12);
+  }
+  .service-row:last-child{border-bottom:1px solid rgba(27,75,102,0.12);}
+  .service-row:nth-child(even) .service-media{order:2;}
+  .service-media{
+    aspect-ratio:16/12;
+    border-radius:48% 52% 40% 60% / 55% 45% 55% 45%;
+    background:linear-gradient(135deg, var(--aqua-suave), var(--gris-perla));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .service-media svg{width:64px; height:64px; color:var(--azul-confianza);}
+  .service-name{font-size:1.4rem;}
+  .service-cta{
+    display:inline-flex; gap:6px; margin-top:14px; font-weight:700;
+    color:var(--coral); text-decoration:none; font-size:0.92rem;
+  }
+
+  /* Why us */
+  .why-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:44px;
+  }
+  .why-card{
+    background:var(--blanco); border:1px solid rgba(27,75,102,0.12);
+    border-radius:var(--radius); padding:32px;
+    box-shadow:0 8px 24px rgba(27,75,102,0.06);
+  }
+  .why-card svg{width:28px; height:28px; color:var(--azul-sereno); margin-bottom:14px;}
+  .why-card h3{font-size:1.1rem; margin-bottom:8px;}
+  .why-card p{font-size:0.93rem; margin:0;}
+
+  /* Gallery */
+  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px;}
+  .gallery-item{
+    aspect-ratio:3/4; border-radius:var(--radius);
+    background:linear-gradient(160deg, var(--gris-perla), var(--aqua-suave));
+    display:flex; align-items:flex-end; padding:16px;
+  }
+  .gallery-item span{font-size:0.78rem; color:var(--azul-confianza); background:rgba(255,255,255,0.85); padding:6px 10px; border-radius:999px; font-weight:600;}
+
+  /* Testimonials */
+  .testi-track{
+    display:flex; gap:24px; overflow-x:auto; margin-top:44px; padding-bottom:12px;
+    scroll-snap-type:x mandatory;
+  }
+  .testi-card{
+    min-width:320px; background:var(--blanco); border:1px solid rgba(27,75,102,0.1);
+    border-radius:var(--radius); padding:30px; scroll-snap-align:start;
+    box-shadow:0 10px 26px rgba(27,75,102,0.08);
+  }
+  .stars{color:var(--coral); margin-bottom:12px; letter-spacing:2px;}
+  .testi-name{margin-top:14px; font-weight:700; font-size:0.88rem; color:var(--azul-confianza);}
+  .testi-name span{color:var(--gris-carbon); font-weight:400;}
+
+  /* Team */
+  .team{display:grid; grid-template-columns:0.75fr 1.25fr; gap:56px; align-items:center;}
+  .team-photo{
+    aspect-ratio:1/1;
+    border-radius:58% 42% 50% 50% / 50% 55% 45% 50%;
+    background:linear-gradient(160deg, var(--aqua-suave), var(--gris-perla));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .team-photo img{width:38%; opacity:0.85;}
+
+  /* FAQ */
+  .faq-list{margin-top:40px; max-width:760px;}
+  .faq-item{border-top:1px solid rgba(27,75,102,0.12);}
+  .faq-item:last-child{border-bottom:1px solid rgba(27,75,102,0.12);}
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 0; cursor:pointer; font-weight:600; font-size:1rem;
+    color:var(--azul-confianza);
+  }
+  .faq-q .plus{font-size:1.3rem; color:var(--coral); transition:transform .2s ease;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .25s ease;
+  }
+  .faq-item.open .faq-a{max-height:200px;}
+  .faq-a p{padding-bottom:20px; margin:0;}
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--azul-confianza); color:#fff;
+    border-radius:28px;
+    padding:60px 48px; display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:center;
+  }
+  .final-cta h2{color:#fff; max-width:14ch; font-size:1.9rem;}
+  .final-cta .script{color:var(--aqua-suave); font-size:1.8rem; display:block; margin-bottom:8px;}
+  .final-cta p{color:rgba(255,255,255,0.82);}
+  .map-block{
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18);
+    border-radius:var(--radius); padding:24px; font-size:0.88rem;
+  }
+  .map-block div{margin-bottom:10px; color:rgba(255,255,255,0.82);}
+  .map-block strong{color:#fff; display:block; margin-bottom:4px; font-family:'Playfair Display',serif; font-weight:600;}
+
+  /* Footer */
+  footer{padding:44px 0; border-top:1px solid rgba(27,75,102,0.12); background:var(--gris-perla);}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+  .footer-inner .logo-mark img{height:34px;}
+  .footer-inner nav a{font-size:0.85rem; color:var(--azul-confianza);}
+  .footer-legal{font-size:0.78rem; color:var(--gris-carbon); margin-top:22px;}
+
+  /* WhatsApp floating button */
+  .wa-float{
+    position:fixed; bottom:24px; right:24px; z-index:100;
+    background:var(--coral); color:#fff; width:60px; height:60px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none; box-shadow:0 10px 26px rgba(244,162,97,0.45);
+    transition:transform .2s ease;
+  }
+  .wa-float:hover{transform:scale(1.06);}
+
+  @media (max-width: 860px){
+    .nav-links{display:none;}
+    .hero, .about, .service-row, .team, .final-cta{grid-template-columns:1fr;}
+    .service-row:nth-child(even) .service-media{order:0;}
+    .why-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .trust{grid-template-columns:repeat(2,1fr);}
+    section{padding:56px 0;}
+    .final-cta{padding:36px 22px; border-radius:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">
+      <img src="data:image/png;base64,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" alt="Dr. Gregorio — Clínica Odontológica">
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="btn btn-cta" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.36 16.7L2 22l5.44-1.43A8.85 8.85 0 0 0 12 21.85a8.86 8.86 0 0 0 5.6-15.53ZM12 20.1a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.78.73.74-2.7-.18-.28A7.34 7.34 0 1 1 19.34 12 7.3 7.3 0 0 1 12 20.1Z"/></svg>
+        Escríbenos
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="hero-eyebrow">Clínica odontológica familiar en Santiago</div>
+        <h1>Cuidamos tu sonrisa con tecnología y calidez</h1>
+        <span class="script script-slogan">Sonríe con tranquilidad</span>
+        <p class="lead">Radiografías digitales en segundos, escaneos 3D sin moldes incómodos y tratamientos guiados por computadora, con el trato cercano de siempre.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-cta" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">Agenda tu consulta por WhatsApp</a>
+          <a class="btn btn-outline" href="#servicios">Conoce nuestros servicios</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="data:image/png;base64,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" alt="Ícono Dr. Gregorio">
+      </div>
+    </section>
+  </div>
+
+  <!-- WAVE DIVIDER -->
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,24 L1440,60 L0,60 Z" fill="#F5F7F8"></path></svg>
+
+  <!-- TRUST BAR -->
+  <div class="bg-perla">
+    <div class="wrap">
+      <div class="trust">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/></svg>
+          <div><div class="num">Diagnóstico rápido</div><span class="label">Radiografías digitales en segundos</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+          <div><div class="num">Comodidad</div><span class="label">Escaneos 3D sin moldes de pasta</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+          <div><div class="num">Precisión</div><span class="label">Tratamientos guiados por computadora</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg>
+          <div><div class="num">Familia de confianza</div><span class="label">Contigo, generación tras generación</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="wrap" id="nosotros">
+    <section class="about">
+      <div>
+        <h2>Más que una clínica, un equipo que se preocupa por ti</h2>
+        <p>En Dr. Gregorio creemos que ir al dentista no debería generar estrés. Por eso combinamos tecnología de vanguardia con algo que no siempre encuentras: un trato humano, cercano y transparente en cada etapa de tu tratamiento.</p>
+        <p>Existimos para devolverte la tranquilidad de sonreír sin preocupaciones, cuidando tu salud bucal con responsabilidad, humanidad e integridad en cada paso.</p>
+      </div>
+      <div class="about-values">
+        <div class="value-row">
+          <div class="value-name">Transparencia</div>
+          <p>Sin sorpresas, siempre claridad sobre tu diagnóstico y costos.</p>
+        </div>
+        <div class="value-row">
+          <div class="value-name">Cercanía</div>
+          <p>Te acompañamos, no solo te atendemos. Eres persona antes que paciente.</p>
+        </div>
+        <div class="value-row">
+          <div class="value-name">Seguridad</div>
+          <p>Protocolos y equipos confiables en cada consulta.</p>
+        </div>
+        <div class="value-row">
+          <div class="value-name">Compromiso</div>
+          <p>Buscamos tu mejor sonrisa, con seguimiento hasta el resultado.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- WAVE DIVIDER -->
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,28 C240,0 480,60 720,32 C960,4 1200,44 1440,20 L1440,60 L0,60 Z" fill="#F5F7F8"></path></svg>
+
+  <!-- SERVICIOS -->
+  <div class="bg-perla" id="servicios">
+    <div class="wrap">
+      <section>
+        <div class="services-head">
+          <span class="script" style="font-size:1.8rem;">Tu sonrisa, en las mejores manos</span>
+          <h2 style="font-size:2rem; margin-top:6px;">¿Qué podemos hacer por ti?</h2>
+          <p>Desde una limpieza de rutina hasta tratamientos más completos — te orientamos sin compromiso.</p>
+        </div>
+
+        <div class="service-row">
+          <div>
+            <h3 class="service-name">Odontología general</h3>
+            <p>Limpieza dental, examen clínico y radiografías digitales para detectar caries ocultas a tiempo.</p>
+            <a class="service-cta" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20consultar%20por%20odontolog%C3%ADa%20general" target="_blank">Preguntar por este servicio →</a>
+          </div>
+          <div class="service-media">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c-3 0-5 2-5 5 0 4 1 6 1 9 0 1.5 1 2 1.5 2s1.2-1 1.5-3c.2-1.5.6-2 1-2s.8.5 1 2c.3 2 1 3 1.5 3s1.5-.5 1.5-2c0-3 1-5 1-9 0-3-2-5-5-5Z"/></svg>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-media">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="9" width="16" height="7" rx="3.5"/><path d="M8 9V7a4 4 0 0 1 8 0v2"/></svg>
+          </div>
+          <div>
+            <h3 class="service-name">Ortodoncia</h3>
+            <p>Frenos o alineadores para enderezar tus dientes, con seguimiento cercano en cada control.</p>
+            <a class="service-cta" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20consultar%20por%20ortodoncia" target="_blank">Preguntar por este servicio →</a>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div>
+            <h3 class="service-name">Blanqueamiento dental</h3>
+            <p>Procedimiento estético seguro para aclarar el color de tus dientes y recuperar el brillo de tu sonrisa.</p>
+            <a class="service-cta" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20consultar%20por%20blanqueamiento%20dental" target="_blank">Preguntar por este servicio →</a>
+          </div>
+          <div class="service-media">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-media">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21V9M12 9c0-3-2-5-5-5M12 9c0-3 2-5 5-5"/><circle cx="7" cy="4" r="1.6"/><circle cx="17" cy="4" r="1.6"/></svg>
+          </div>
+          <div>
+            <h3 class="service-name">Prótesis e implantes</h3>
+            <p>Soluciones definitivas y de aspecto natural para recuperar piezas dentales faltantes.</p>
+            <a class="service-cta" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20consultar%20por%20implantes%20dentales" target="_blank">Preguntar por este servicio →</a>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:16px;">
+          <p style="max-width:none;">¿No encuentras lo que buscas? <a href="https://wa.me/56900000000" target="_blank" style="color:var(--coral); font-weight:700; text-decoration:none;">Escríbenos y te orientamos sin compromiso →</a></p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- WAVE DIVIDER -->
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C240,50 480,10 720,30 C960,50 1200,10 1440,30 L1440,0 L0,0 Z" fill="#F5F7F8" transform="translate(0,0)"></path><path d="M0,20 C240,50 480,10 720,30 C960,50 1200,10 1440,30 L1440,60 L0,60 Z" fill="#FFFFFF"></path></svg>
+
+  <!-- WHY US -->
+  <div class="wrap">
+    <section>
+      <h2 style="font-size:2rem; max-width:18ch;">Por qué los pacientes confían en Dr. Gregorio</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+          <h3>Sin sorpresas</h3>
+          <p>Te explicamos tu diagnóstico y costos antes de empezar cualquier tratamiento.</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <h3>Diagnóstico en minutos</h3>
+          <p>Radiografías digitales y escaneo 3D, sin moldes incómodos de pasta.</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg>
+          <h3>Te escuchamos de verdad</h3>
+          <p>Cada tratamiento se adapta a ti, no al revés.</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>
+          <h3>Enfoque en resultados</h3>
+          <p>Seguimiento cercano hasta que estés conforme con tu tratamiento.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="bg-perla">
+    <div class="wrap">
+      <section>
+        <h2 style="font-size:2rem;">Resultados que hablan por sí solos</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item"><span>Antes / Después</span></div>
+          <div class="gallery-item"><span>Antes / Después</span></div>
+          <div class="gallery-item"><span>Antes / Después</span></div>
+        </div>
+        <div style="margin-top:28px;">
+          <a class="btn btn-outline" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20agendar%20una%20evaluaci%C3%B3n" target="_blank">Tu sonrisa podría ser la próxima →</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="wrap" id="testimonios">
+    <section>
+      <span class="script" style="font-size:1.8rem;">Cuidamos tu sonrisa, cuidamos de ti</span>
+      <h2 style="font-size:2rem; margin-top:6px;">Lo que dicen nuestros pacientes</h2>
+      <div class="testi-track">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Llegué con mucho miedo al dentista y el equipo me hizo sentir tranquila desde la primera cita."</p>
+          <div class="testi-name">María F. <span>· paciente desde 2022</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Me explicaron todo el tratamiento y los costos antes de empezar. Se nota la transparencia."</p>
+          <div class="testi-name">Ignacio R. <span>· paciente desde 2023</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Excelente atención y resultados. Mi ortodoncia quedó mejor de lo que esperaba."</p>
+          <div class="testi-name">Camila S. <span>· paciente desde 2021</span></div>
+        </div>
+      </div>
+      <p style="font-size:0.82rem; margin-top:10px;">* Testimonios de ejemplo — reemplazar con reseñas reales de pacientes antes de publicar.</p>
+    </section>
+  </div>
+
+  <!-- TEAM -->
+  <div class="bg-perla">
+    <div class="wrap">
+      <section class="team">
+        <div class="team-photo">
+          <img src="data:image/png;base64,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" alt="Dr. Gregorio">
+        </div>
+        <div>
+          <h2 style="font-size:2rem;">Quién te va a atender</h2>
+          <p>Dr. Gregorio cuenta con más de 12 años de experiencia en odontología general y estética, con un enfoque centrado en el bienestar y la tranquilidad del paciente en cada etapa del tratamiento.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="wrap" id="faq">
+    <section>
+      <h2 style="font-size:2rem;">Resolvemos tus dudas antes de que las tengas</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">¿Necesito agendar una cita o puedo llegar directamente?<span class="plus">+</span></div>
+          <div class="faq-a"><p>Te recomendamos agendar para asegurar tu horario, pero puedes escribirnos por WhatsApp y te ayudamos a coordinar.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Atienden urgencias dentales?<span class="plus">+</span></div>
+          <div class="faq-a"><p>Sí, contamos con horarios reservados para urgencias. Escríbenos y te damos prioridad.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Qué medios de pago aceptan?<span class="plus">+</span></div>
+          <div class="faq-a"><p>Aceptamos efectivo, tarjetas de débito y crédito, y transferencia bancaria.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Trabajan con isapres o convenios?<span class="plus">+</span></div>
+          <div class="faq-a"><p>Contamos con convenios con isapres seleccionadas. Cuéntanos la tuya y te confirmamos.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Cuánto dura la primera consulta?<span class="plus">+</span></div>
+          <div class="faq-a"><p>La evaluación inicial toma entre 30 y 45 minutos, incluyendo diagnóstico y plan de tratamiento.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="wrap" id="contacto" style="padding:60px 0;">
+    <div class="final-cta">
+      <div>
+        <span class="script">Sonríe con tranquilidad</span>
+        <h2>Tu sonrisa merece tranquilidad. Empecemos hoy.</h2>
+        <p>Escríbenos y coordinemos tu primera consulta. Sin compromiso, con toda la información que necesitas.</p>
+        <a class="btn btn-cta" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      </div>
+      <div class="map-block">
+        <strong>Ubicación</strong>
+        <div>Av. Providencia 1234, Providencia, Santiago</div>
+        <strong style="margin-top:16px;">Horario</strong>
+        <div>Lunes a viernes, 9:00–19:00</div>
+        <div>Sábado, 9:00–13:00</div>
+        <strong style="margin-top:16px;">Teléfono</strong>
+        <div>+56 9 0000 0000</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="logo-mark">
+      <img src="data:image/png;base64,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" alt="Dr. Gregorio">
+    </div>
+    <nav class="nav-links" style="display:flex;">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn btn-outline" href="https://wa.me/56900000000" target="_blank">WhatsApp</a>
+  </div>
+  <div class="wrap footer-legal">© 2026 Dr. Gregorio. Todos los derechos reservados.</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.36 16.7L2 22l5.44-1.43A8.85 8.85 0 0 0 12 21.85a8.86 8.86 0 0 0 5.6-15.53ZM12 20.1a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.78.73.74-2.7-.18-.28A7.34 7.34 0 1 1 19.34 12 7.3 7.3 0 0 1 12 20.1Zm4-5.46c-.22-.11-1.3-.64-1.5-.72s-.35-.11-.5.11-.57.72-.7.87-.26.17-.48.06a6 6 0 0 1-1.77-1.09 6.6 6.6 0 0 1-1.23-1.53c-.13-.22 0-.34.1-.45.1-.1.22-.26.33-.4a1.5 1.5 0 0 0 .22-.37.4.4 0 0 0 0-.39c-.06-.11-.5-1.2-.68-1.65s-.36-.37-.5-.38h-.43a.83.83 0 0 0-.6.28 2.53 2.53 0 0 0-.79 1.88 4.4 4.4 0 0 0 .92 2.32 10.06 10.06 0 0 0 3.85 3.4 4.4 4.4 0 0 0 2.7.56 2.3 2.3 0 0 0 1.52-1.07 1.87 1.87 0 0 0 .13-1.07c-.06-.1-.2-.16-.42-.27Z"/></svg>
+</a>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

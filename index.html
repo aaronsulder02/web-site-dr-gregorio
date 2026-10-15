@@ -260,6 +260,69 @@
     section{padding:56px 0;}
     .final-cta{padding:36px 22px; border-radius:20px;}
   }
+  /* Final CTA: botones */
+  .final-cta-btns{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px;}
+  .btn-ghost-light{background:transparent; border:1.5px solid rgba(255,255,255,.7); color:#fff;}
+  .btn-ghost-light:hover{background:#fff; color:var(--azul-confianza);}
+
+  /* Modal de agenda (carga el iframe solo al abrir) */
+  html.agenda-open{overflow:hidden;}
+  .agenda-modal{
+    border:0; padding:0; background:transparent; color:var(--gris-carbon);
+    max-width:none; max-height:none; margin:auto; overflow:visible;
+    width:min(920px, calc(100vw - 32px)); height:min(88vh, 820px);
+  }
+  .agenda-modal::backdrop{background:rgba(27,75,102,.58); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);}
+  .agenda-modal[open]{display:block; animation:agenda-in .22s ease-out;}
+  .agenda-panel{
+    display:flex; flex-direction:column; height:100%;
+    background:var(--blanco); border-radius:20px; overflow:hidden;
+    box-shadow:0 30px 80px rgba(27,75,102,.35); overscroll-behavior:contain;
+  }
+  .agenda-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px;
+    padding:16px 18px 14px 22px; background:var(--gris-perla); border-bottom:1px solid #e3eaee;
+  }
+  .agenda-head h2{font-family:'Playfair Display', serif; font-size:1.35rem; color:var(--azul-confianza); margin:0 0 2px; line-height:1.2;}
+  .agenda-head p{margin:0; font-size:.85rem; line-height:1.4;}
+  .agenda-close{
+    flex-shrink:0; width:44px; height:44px; border-radius:50%; border:1px solid #d5dfe4;
+    background:#fff; color:var(--azul-confianza); cursor:pointer; display:grid; place-items:center;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .agenda-close:hover{background:var(--aqua-suave); transform:rotate(90deg);}
+  .agenda-close:focus-visible, .agenda-foot a:focus-visible{outline:3px solid var(--azul-sereno); outline-offset:2px;}
+  .agenda-body{position:relative; flex:1; min-height:0; background:#fff;}
+  .agenda-body iframe{position:absolute; inset:0; width:100%; height:100%; border:0; opacity:0; transition:opacity .25s ease;}
+  .agenda-modal.is-ready .agenda-body iframe{opacity:1;}
+  .agenda-loader{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:14px; color:var(--azul-confianza); font-size:.92rem; font-weight:600; padding:24px; text-align:center;
+  }
+  .agenda-modal.is-ready .agenda-loader{display:none;}
+  .agenda-spinner{width:36px; height:36px; border-radius:50%; border:3px solid var(--aqua-suave); border-top-color:var(--azul-sereno); animation:agenda-spin .8s linear infinite;}
+  .agenda-slow{display:none; font-weight:500; font-size:.85rem; color:var(--gris-carbon); max-width:340px;}
+  .agenda-slow a{color:var(--azul-confianza); font-weight:700;}
+  .agenda-modal.is-slow:not(.is-ready) .agenda-slow{display:block;}
+  .agenda-foot{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 18px;
+    padding:10px 22px; border-top:1px solid #e3eaee; font-size:.82rem; background:#fff;
+  }
+  .agenda-foot a{color:var(--azul-confianza); font-weight:600; text-decoration:none;}
+  .agenda-foot a:hover{text-decoration:underline;}
+  @keyframes agenda-in{from{opacity:0; transform:translateY(14px) scale(.985);} to{opacity:1; transform:none;}}
+  @keyframes agenda-spin{to{transform:rotate(360deg);}}
+  @media (max-width:640px){
+    .agenda-modal{width:100vw; height:100vh; height:100dvh;}
+    .agenda-panel{border-radius:0;}
+    .agenda-head{padding:12px 12px 12px 16px;}
+    .agenda-foot{padding:10px 16px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .agenda-modal[open]{animation:none;}
+    .agenda-spinner{animation-duration:2s;}
+    .agenda-close:hover{transform:none;}
+  }
 </style>
 </head>
 <body>
@@ -277,9 +340,9 @@
         <a href="#faq">Preguntas</a>
         <a href="#contacto">Contacto</a>
       </div>
-      <a class="btn btn-cta" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.36 16.7L2 22l5.44-1.43A8.85 8.85 0 0 0 12 21.85a8.86 8.86 0 0 0 5.6-15.53ZM12 20.1a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.78.73.74-2.7-.18-.28A7.34 7.34 0 1 1 19.34 12 7.3 7.3 0 0 1 12 20.1Z"/></svg>
-        Escríbenos
+      <a class="btn btn-cta" href="https://molara-theta.vercel.app/reservar/dr-gregorio" target="_blank" rel="noopener" data-agenda>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+        Agendar cita
       </a>
     </nav>
   </div>
@@ -295,7 +358,7 @@
         <span class="script script-slogan">Sonríe con tranquilidad</span>
         <p class="lead">Radiografías digitales en segundos, escaneos 3D sin moldes incómodos y tratamientos guiados por computadora, con el trato cercano de siempre.</p>
         <div class="hero-ctas">
-          <a class="btn btn-cta" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">Agenda tu consulta por WhatsApp</a>
+          <a class="btn btn-cta" href="https://molara-theta.vercel.app/reservar/dr-gregorio" target="_blank" rel="noopener" data-agenda>Agenda tu cita online</a>
           <a class="btn btn-outline" href="#servicios">Conoce nuestros servicios</a>
         </div>
       </div>
@@ -468,7 +531,7 @@
           <div class="gallery-item"><span>Antes / Después</span></div>
         </div>
         <div style="margin-top:28px;">
-          <a class="btn btn-outline" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20agendar%20una%20evaluaci%C3%B3n" target="_blank">Tu sonrisa podría ser la próxima →</a>
+          <a class="btn btn-outline" href="https://molara-theta.vercel.app/reservar/dr-gregorio" target="_blank" rel="noopener" data-agenda>Tu sonrisa podría ser la próxima →</a>
         </div>
       </section>
     </div>
@@ -551,7 +614,10 @@
         <span class="script">Sonríe con tranquilidad</span>
         <h2>Tu sonrisa merece tranquilidad. Empecemos hoy.</h2>
         <p>Escríbenos y coordinemos tu primera consulta. Sin compromiso, con toda la información que necesitas.</p>
-        <a class="btn btn-cta" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        <div class="final-cta-btns">
+          <a class="btn btn-cta" href="https://molara-theta.vercel.app/reservar/dr-gregorio" target="_blank" rel="noopener" data-agenda>Agenda tu cita online</a>
+          <a class="btn btn-ghost-light" href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </div>
       </div>
       <div class="map-block">
         <strong>Ubicación</strong>
@@ -586,6 +652,31 @@
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.36 16.7L2 22l5.44-1.43A8.85 8.85 0 0 0 12 21.85a8.86 8.86 0 0 0 5.6-15.53ZM12 20.1a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.78.73.74-2.7-.18-.28A7.34 7.34 0 1 1 19.34 12 7.3 7.3 0 0 1 12 20.1Zm4-5.46c-.22-.11-1.3-.64-1.5-.72s-.35-.11-.5.11-.57.72-.7.87-.26.17-.48.06a6 6 0 0 1-1.77-1.09 6.6 6.6 0 0 1-1.23-1.53c-.13-.22 0-.34.1-.45.1-.1.22-.26.33-.4a1.5 1.5 0 0 0 .22-.37.4.4 0 0 0 0-.39c-.06-.11-.5-1.2-.68-1.65s-.36-.37-.5-.38h-.43a.83.83 0 0 0-.6.28 2.53 2.53 0 0 0-.79 1.88 4.4 4.4 0 0 0 .92 2.32 10.06 10.06 0 0 0 3.85 3.4 4.4 4.4 0 0 0 2.7.56 2.3 2.3 0 0 0 1.52-1.07 1.87 1.87 0 0 0 .13-1.07c-.06-.1-.2-.16-.42-.27Z"/></svg>
 </a>
 
+<dialog id="agenda-modal" class="agenda-modal" aria-labelledby="agenda-title">
+  <div class="agenda-panel">
+    <div class="agenda-head">
+      <div>
+        <h2 id="agenda-title">Agenda tu cita</h2>
+        <p>Elige servicio, día y hora en menos de un minuto.</p>
+      </div>
+      <button type="button" class="agenda-close" data-agenda-close aria-label="Cerrar agenda">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="agenda-body" id="agenda-body">
+      <div class="agenda-loader" role="status" aria-live="polite">
+        <span class="agenda-spinner" aria-hidden="true"></span>
+        <span>Cargando agenda…</span>
+        <span class="agenda-slow">Está tardando más de lo normal. Puedes <a href="https://molara-theta.vercel.app/reservar/dr-gregorio" target="_blank" rel="noopener">abrir la agenda en una pestaña nueva</a> o escribirnos por WhatsApp.</span>
+      </div>
+    </div>
+    <div class="agenda-foot">
+      <a href="https://wa.me/56900000000?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Dr.%20Gregorio%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20%F0%9F%98%8A" target="_blank" rel="noopener">¿Prefieres WhatsApp? Escríbenos</a>
+      <a href="https://molara-theta.vercel.app/reservar/dr-gregorio" target="_blank" rel="noopener">Abrir en pestaña nueva ↗</a>
+    </div>
+  </div>
+</dialog>
+
 <script>
   document.querySelectorAll('.faq-item').forEach(item => {
     item.querySelector('.faq-q').addEventListener('click', () => {
@@ -594,6 +685,84 @@
       if(!isOpen) item.classList.add('open');
     });
   });
+</script>
+
+<script>
+/* Agenda en modal: el iframe NO existe hasta que el visitante hace click. */
+(function(){
+  var CFG = { origin: 'https://molara-theta.vercel.app', slug: 'dr-gregorio' };
+  CFG.url = CFG.origin + '/reservar/' + CFG.slug;
+
+  var dlg = document.getElementById('agenda-modal');
+  /* Sin <dialog> (navegadores muy antiguos): los botones conservan su href y abren la agenda en pestaña nueva. */
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+
+  var body = document.getElementById('agenda-body');
+  var frame = null, loaded = false, slowTimer = null, lastFocus = null, closedAt = 0;
+
+  function mount() {
+    if (frame) return;
+    frame = document.createElement('iframe');
+    frame.title = 'Agenda de citas · Dr. Gregorio';
+    frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox');
+    frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    frame.addEventListener('load', function () {
+      loaded = true;
+      clearTimeout(slowTimer);
+      dlg.classList.add('is-ready');
+      dlg.classList.remove('is-slow');
+    });
+    frame.src = CFG.url;
+    body.appendChild(frame);
+    slowTimer = setTimeout(function () { if (!loaded) dlg.classList.add('is-slow'); }, 12000);
+  }
+
+  function openAgenda() {
+    if (dlg.open) return;
+    lastFocus = document.activeElement;
+    /* Si la dejaron cerrada mucho rato, reiniciamos el flujo (evita ver una reserva ya confirmada). */
+    if (frame && closedAt && Date.now() - closedAt > 10 * 60 * 1000) frame.src = CFG.url;
+    mount();
+    dlg.showModal();
+    document.documentElement.classList.add('agenda-open');
+  }
+
+  dlg.addEventListener('close', function () {
+    closedAt = Date.now();
+    document.documentElement.classList.remove('agenda-open');
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  dlg.querySelector('[data-agenda-close]').addEventListener('click', function () { dlg.close(); });
+
+  /* Calienta la conexión cuando el visitante muestra intención (sin costo en la carga inicial). */
+  var warmed = false;
+  function warm() {
+    if (warmed) return; warmed = true;
+    var l = document.createElement('link'); l.rel = 'preconnect'; l.href = CFG.origin;
+    document.head.appendChild(l);
+  }
+
+  document.querySelectorAll('[data-agenda]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; /* respeta "abrir en pestaña nueva" */
+      e.preventDefault(); openAgenda();
+    });
+    ['pointerenter', 'focus', 'touchstart'].forEach(function (ev) { el.addEventListener(ev, warm, { passive: true, once: true }); });
+  });
+
+  /* Contrato con Molara (pendiente de emitir desde la agenda): mensaje { type: 'molara:booking-confirmed' } */
+  window.addEventListener('message', function (e) {
+    if (e.origin !== CFG.origin || !e.data || typeof e.data !== 'object') return;
+    if (e.data.type === 'molara:booking-confirmed') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'booking_confirmed', clinic: CFG.slug });
+    }
+  });
+
+  /* Enlace directo: https://…/#agendar abre la agenda al cargar */
+  if (location.hash === '#agendar') window.addEventListener('load', openAgenda);
+})();
 </script>
 
 </body>
